@@ -42,8 +42,11 @@ header div img {
 }
 
 main {
+  width: 90%;
   max-width: 520px;
   margin: 2rem auto;
+  display: grid;
+  gap: 1.5rem;
 }
 
 section {
@@ -57,7 +60,6 @@ section div {
   padding: 2rem;
   padding-top: 1.5rem;
   border-radius: 8px;
-  margin-bottom: 1.6rem;
 }
 
 section h2 {
@@ -100,7 +102,7 @@ header div {
 }
 
 main section {
-  animation: fromBottom 700ms backwards;
+  animation: fromRight 700ms backwards;
 }
 
 main section:nth-child(1) {
@@ -127,14 +129,14 @@ main section:nth-child(3) {
   }
 }
 
-@keyframes fromBottom {
+@keyframes fromRight {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(30px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
