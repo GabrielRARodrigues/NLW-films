@@ -21,6 +21,7 @@ body * {
 header {
   padding-top: 2rem;
   text-align: center;
+  height: calc(120px + 2rem);
 }
 header div {
   display: flex;
@@ -29,6 +30,10 @@ header div {
   padding: 4px;
   border-radius: 50%;
   background-image: linear-gradient(90deg, #c91842 0%, #5cc2e2 100%);
+  transition: transform 300ms;
+}
+header div:hover {
+  transform: scale(1.1);
 }
 
 header div img {
@@ -74,8 +79,62 @@ section div ul {
   flex-wrap: wrap;
 }
 
+section div ul li {
+  transition: transform 300ms;
+}
+
+section div ul li:hover {
+  transform: scale(1.1);
+}
+
 section ul li img {
   width: 100px;
   border-radius: 8px;
   border: 1px solid #555555;
+}
+
+/*** Animation ***/
+
+header div {
+  animation: fromTop 700ms 0.27s backwards;
+}
+
+main section {
+  animation: fromBottom 700ms backwards;
+}
+
+main section:nth-child(1) {
+  animation-delay: 0;
+}
+
+main section:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+main section:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
